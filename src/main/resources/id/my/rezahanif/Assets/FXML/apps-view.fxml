@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="355.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.my.rezahanif.Controller.appsController">
+    <children>
+        <VBox prefHeight="55.0" prefWidth="449.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#menuClose" text="Close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#menuAbout" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <HBox prefHeight="11.0" prefWidth="600.0">
+                    <children>
+                        <TextField fx:id="txtHost" promptText="Host" />
+                        <TextField fx:id="txtUsername" layoutX="10.0" layoutY="10.0" promptText="Username" />
+                        <PasswordField fx:id="txtPassword" promptText="Password" />
+                        <TextField fx:id="txtPort" layoutX="159.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" promptText="Port" />
+                    </children>
+                </HBox>
+                <ToolBar prefHeight="56.0" prefWidth="449.0">
+                    <items>
+                        <Button fx:id="btnQuickconnect" mnemonicParsing="false" onAction="#handleQuickConnect" text="Quickconnect" />
+                        <Button fx:id="btnDisconnect" mnemonicParsing="false" onAction="#handleDisconnect" text="Disconnect" />
+                    </items>
+                </ToolBar>
+            </children>
+        </VBox>
+        <SplitPane dividerPositions="0.5" layoutY="85.0" orientation="VERTICAL" prefHeight="226.0" prefWidth="449.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
+            <items>
+                <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="83.0" prefWidth="447.0" vbarPolicy="NEVER">
+                    <content>
+                        <AnchorPane prefHeight="48.0" prefWidth="447.0">
+                            <children>
+                                <ListView fx:id="listLog" prefHeight="113.0" prefWidth="447.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+                <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="66.0" prefWidth="447.0">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <SplitPane dividerPositions="0.5" prefHeight="58.0" prefWidth="449.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <items>
+                                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                            <items>
+                                                <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                                    <top>
+                                                        <AnchorPane prefHeight="11.0" prefWidth="221.0" BorderPane.alignment="CENTER">
+                                                            <children>
+                                                                <TextField disable="true" prefHeight="25.0" prefWidth="75.0" text="Local site:" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="146.0" AnchorPane.topAnchor="0.0" />
+                                                                <TextField fx:id="txtLocalPath" layoutX="74.0" prefHeight="25.0" prefWidth="119.0" text="\\" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="0.0">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                    </font></TextField>
+                                                                <Button fx:id="refreshLocal" layoutX="169.0" mnemonicParsing="false" onAction="#handleRefreshLocal" prefHeight="25.0" prefWidth="26.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                    <graphic>
+                                                                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@../Images/refresh-arrow.png" /> </image>
+                                                                        </ImageView>
+                                                                    </graphic>
+                                                                </Button>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </top>
+                                                    <center>
+                                                        <AnchorPane prefHeight="0.0" prefWidth="221.0" BorderPane.alignment="CENTER">
+                                                            <children>
+                                                                <TreeView fx:id="treeLocal" prefHeight="25.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </center>
+                                                </BorderPane>
+                                                <TableView fx:id="tbLocal" prefHeight="200.0" prefWidth="200.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="tbLocal_colFilename" prefWidth="75.0" text="Filename" />
+                                                        <TableColumn fx:id="tbLocal_colFilesize" prefWidth="75.0" text="Filesize" />
+                                                        <TableColumn fx:id="tbLocal_colFiletype" prefWidth="75.0" text="Filetype" />
+                                                        <TableColumn fx:id="tbLocal_colLstModif" prefWidth="75.0" text="Last Modified" />
+                                                    </columns>
+                                                </TableView>
+                                            </items>
+                                        </SplitPane>
+                                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                            <items>
+                                                <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                                    <center>
+                                                        <AnchorPane prefHeight="0.0" prefWidth="221.0" BorderPane.alignment="CENTER">
+                                                            <children>
+                                                                <TreeView fx:id="treeRemote" prefHeight="25.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </center>
+                                                    <top>
+                                                        <AnchorPane prefHeight="11.0" prefWidth="221.0" BorderPane.alignment="CENTER">
+                                                            <children>
+                                                                <TextField disable="true" prefHeight="25.0" prefWidth="85.0" text="Remote site:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                <TextField fx:id="txtRemotePath" disable="true" layoutX="85.0" prefHeight="25.0" prefWidth="107.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="0.0">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                    </font></TextField>
+                                                                <Button fx:id="refreshRemote" disable="true" layoutX="192.0" mnemonicParsing="false" onAction="#handleRefreshRemote" prefHeight="25.0" prefWidth="26.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                    <graphic>
+                                                                        <ImageView disable="true" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@../Images/refresh-arrow.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </graphic>
+                                                                </Button>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </top>
+                                                </BorderPane>
+                                                <TableView fx:id="tbRemote" prefHeight="200.0" prefWidth="200.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="tbRemote_colFilename" prefWidth="75.0" text="Filename" />
+                                                        <TableColumn fx:id="tbRemote_colFilesize" prefWidth="75.0" text="Filesize" />
+                                                        <TableColumn fx:id="tbRemote_colFiletype" prefWidth="75.0" text="Filetype" />
+                                                        <TableColumn fx:id="tbRemote_colLstModif" prefWidth="75.0" text="Last Modified" />
+                                                    </columns>
+                                                </TableView>
+                                            </items>
+                                        </SplitPane>
+                                    </items>
+                                </SplitPane>
+                            </children></AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="447.0">
+                            <children>
+                                <TableView fx:id="tbLogFiles" prefHeight="91.0" prefWidth="447.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="tbLogFiles_colFile" prefWidth="150.0" text="Server/Local file" />
+                                        <TableColumn fx:id="tbLogFiles_colDirection" prefWidth="100.0" text="Direction" />
+                                        <TableColumn fx:id="tbLogFiles_colRemoteFile" prefWidth="150.0" text="Remote File" />
+                                        <TableColumn fx:id="tbLogFiles_colSize" prefWidth="75.0" text="Size" />
+                                        <TableColumn fx:id="tbLogFiles_colStatus" prefWidth="75.0" text="Status" />
+                                    </columns>
+                                </TableView>
+
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </items>
+        </SplitPane>
+        <AnchorPane layoutY="318.0" prefHeight="37.0" prefWidth="447.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    </children>
+</AnchorPane>

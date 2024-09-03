@@ -60,43 +60,43 @@ public class IconLocalCache {
         switch (extension) {
             case "doc":
             case "docx":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/docx.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/docx.png";
                 break;
             case "txt":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/txt.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/txt.png";
                 break;
             case "exe":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/exe-file.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/exe-file.png";
                 break;
             case "jpg":
             case "jpeg":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/image.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/image.png";
                 break;
             case "png":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/image.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/image.png";
                 break;
             case "cpp":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/cpp.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/cpp.png";
                 break;
             case "java":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/java.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/java.png";
                 break;
             case "css":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/css.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/css.png";
                 break;
             case "php":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/php.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/php.png";
                 break;
             case "csv":
             case "xls":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/excel.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/excel.png";
                 break;
             case "pdf":
             case "pptx":
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/pptx.png";
+                iconPath = "/id/my/rezahanif/Assets/Images/pptx.png";
                 break;
             default:
-                iconPath = "/id/my/rezahanif/ftp_client/Assets/file.png"; // ikon default jika tidak ada yang cocok
+                iconPath = "/id/my/rezahanif/Assets/Images/file.png"; // ikon default jika tidak ada yang cocok
                 break;
         }
         Image fileIcon = new Image(iconPath);
@@ -108,7 +108,7 @@ public class IconLocalCache {
     }
 
     public ImageView getHomeServerIcon() {
-        Image directoryIcon = new Image("/id/my/rezahanif/ftp_client/Assets/homeServer.png");
+        Image directoryIcon = new Image("/id/my/rezahanif/Assets/Images/homeServer.png");
         ImageView imageView = new ImageView(directoryIcon);
         imageView.setFitWidth(iconWidth);
         imageView.setFitHeight(iconHeight);
@@ -116,7 +116,7 @@ public class IconLocalCache {
         return imageView;
     }
     public ImageView getDir() {
-        Image directoryIcon = new Image("/id/my/rezahanif/ftp_client/Assets/folder.png");
+        Image directoryIcon = new Image("/id/my/rezahanif/Assets/Images/folder.png");
         ImageView imageView = new ImageView(directoryIcon);
         imageView.setFitWidth(iconWidth);
         imageView.setFitHeight(iconHeight);
